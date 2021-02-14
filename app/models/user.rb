@@ -8,6 +8,10 @@ class User < ApplicationRecord
     :recoverable, :rememberable, :validatable
 
   def image_exists
+    if (self.photo_url.empty?)
+      return
+    end
+
     url = URI.parse(self.photo_url)
     http = Net::HTTP.start(url.host, url.port, :use_ssl => url.scheme == 'https')
 

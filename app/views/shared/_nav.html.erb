@@ -9,7 +9,11 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-
+          <% if user_signed_in? %>
+            <li>
+            <%= link_to(t("sign_out"), destroy_user_session_path, method: :delete, :class => "btn btn-outline-primary") %>
+            </li>
+          <% end %>
         </li>
       </ul>
     </div>

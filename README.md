@@ -1,24 +1,19 @@
-# README
+# RunTracker
+###### PD Coding Challenge
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a run tracking app which allows users to create an account, input their running data and view their running history along with calculated calories burned on those runs.
 
-Things you may want to cover:
+  - Ruby 2.6.3p62
+  - Rails 6.1.1
+  - Devise 4.7.3
 
-* Ruby version
 
-* System dependencies
+### Deployment
+ 1. Download / Pull repo
+ 2. `cd run-tracker`
+ 3. `bundler install`
+ 4. `rails db:migrate`
+ 5. Goto `localhost:3000`
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Testing
+`rails test`

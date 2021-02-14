@@ -5,6 +5,7 @@ en:
   run_type: "Select the type of activity"
   sign_up: "Sign up"
   sign_in: "Log in"
+  sign_out: "Log Out"
   forgot_password: "Forgot your password?"
   submit: "Submit"
   label_distance: "Distance (km)"

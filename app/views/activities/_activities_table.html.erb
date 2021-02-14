@@ -1,0 +1,20 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td><%= t("label_date") %></td>
+            <td><%= t("label_distance") %></td>
+            <td><%= t("label_time") %></td>
+            <td><%= t("label_kcal") %></td>
+        </tr>
+    </thead>
+    <tbody>
+    <% @activities.each do |a| %>
+        <tr>
+            <td><%= a.date.to_date.strftime("%d/%m/%Y") %></td>
+            <td><%= a.distance %></td>
+            <td><%= a.time %></td>
+            <td><%= a.kcal.round(1) %></td>
+        </tr>
+    <% end %>
+    </tbody>
+</table>

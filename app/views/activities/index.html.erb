@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-12 h-100">
+        <div class="jumbotron">
+            <div class="row d-flex justify-content-center">
+                <div class="col-3">
+                    <div class="profile-img">
+                        <% if current_user.photo_url.blank? %>
+                            <img src="https://static.thenounproject.com/png/221824-200.png">
+                        <% else %>
+                            <img src="<%= current_user.photo_url %>">
+                        <% end %>
+                    </div>
+                    <h2 class="text-center mt-2">
+                        <%= current_user.name %>
+                    </h2>
+                </div>
+                <div class="col-9">
+                    <div class="row">
+                        <div class="offset-1 col-11 mt-4">
+                            <h3><%= t('add_run') %></h3>
+                            <%= render "add_form" %>
+                        </div>
+                        <div class="offset-1 col-11 mt-4">
+                            <h3><%= t('view_run') %></h3>
+                            <%= render "activities_table" %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

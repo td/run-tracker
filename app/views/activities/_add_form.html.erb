@@ -1,0 +1,33 @@
+<%= form_for(@activity, html: { method: :post }) do |f| %>
+<div class="row">
+    <div class="col-6">
+        <%= f.label :date, t("label_date") %><br />
+        <%= f.date_field :date, :class => "form-control", :value => Date.today.to_s(:db), :required => true %>
+    </div>
+
+    <div class="col-6">
+        <%= f.label :weight, t("label_weight") %><br />
+        <% if @last_record.blank? %>
+            <%= f.number_field :weight, :class => "form-control", :required => true %>
+        <% else %>
+            <%= f.number_field :weight, :class => "form-control", :value => @last_record.weight, :required => true %>
+        <% end %>
+    </div>
+
+    <div class="col-6">
+        <%= f.label :distance, t("label_distance") %><br />
+        <%= f.number_field :distance, :class => "form-control", :required => true %>
+    </div>
+
+    <div class="col-6">
+        <%= f.label :time, t("label_time") %><br />
+        <%= f.number_field :time, :class => "form-control", :required => true %>
+    </div>
+</div>
+
+<div class="row">
+    <div class="actions col-3 offset-md-9">
+        <%= f.submit t("submit"), :class => "btn col-lg btn-outline-primary mt-2" %>
+    </div>
+</div>
+<% end %>
